@@ -54,7 +54,8 @@ local function SpoofProperty(Instance,Property,Value)
     end))
 end
 
-Killaura = bool
+function(bool)
+	Killaura = bool
 	if bool == false then return end
 	while Killaura do
 		for i = 1,3 do
@@ -72,4 +73,4 @@ Killaura = bool
 		end
 		wait(.4)
 	end
-end
+end)
