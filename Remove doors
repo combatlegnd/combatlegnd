@@ -1,0 +1,10 @@
+-- Name
+local Part = "Door"
+
+-- Script
+local ahmed = game:GetDescendants()
+for i = 1, #ahmed do local v = femboy[i]
+if v.Name == Part then
+v:Destroy()
+end
+end
