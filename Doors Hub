@@ -1,7 +1,7 @@
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Creator";
     Text = "accepted request by combatlegnd#0440.";
-    Duration = 120;
+    Duration = 30;
 })
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
