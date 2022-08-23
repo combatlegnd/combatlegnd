@@ -1,0 +1,118 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Doors Sorry By combatlegnd", "Synapse")
+
+--Main
+	local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+
+	MainSection:NewButton("Full Bright lighter +20", "Fullbright But with lighter", function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Doors%20Light%20full%20Bright%20u%20can%20change%20it'))()
+	end)
+
+
+	MainSection:NewToggle("RemoveDoors", "Remove real doors not fake doors", function(state)
+		if state then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Remove%20doors", true))()
+		else
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Remove%20doors", true))()
+		end
+	end)
+
+	MainSection:NewToggle("z to Fly", "Make u fly", function(state)
+		if state then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Fly", true))()
+		else
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Fly", true))()
+		end
+	end)
+
+
+	MainSection:NewToggle("Speed 32", "Speeding u to 32", function(state)
+		if state then
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Speeeddd%20u%20can%20change%20the%20number'))()
+		else
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Speeeddd%20u%20can%20change%20the%20number'))()
+		end
+	end)
+	
+
+	MainSection:NewToggle("Fullbright-Infinity Fullbright", "Making u see in the dark ", function(state)
+		if state then
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Full%20bright'))()
+		else
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Full%20bright'))()
+		end
+	end)
+	
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Accpet requested script by ";
+    Text = "combatlegnd#0440.";
+    Duration = 30;
+})
+
+	
+	
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "requested";
+    Text = "requested By ras#2436.";
+    Duration = 30;
+})
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Doors Sorry By combatlegnd", "Synapse")
+
+--Main
+	local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+
+	MainSection:NewButton("Full Bright lighter +20", "Fullbright But with lighter", function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Doors%20Light%20full%20Bright%20u%20can%20change%20it'))()
+	end)
+
+
+	MainSection:NewToggle("RemoveDoors", "Remove real doors not fake doors", function(state)
+		if state then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Remove%20doors", true))()
+		else
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Remove%20doors", true))()
+		end
+	end)
+
+	MainSection:NewToggle("z to Fly", "Make u fly", function(state)
+		if state then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Fly", true))()
+		else
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Fly", true))()
+		end
+	end)
+
+
+	MainSection:NewToggle("Speed 32", "Speeding u to 32", function(state)
+		if state then
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Speeeddd%20u%20can%20change%20the%20number'))()
+		else
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Speeeddd%20u%20can%20change%20the%20number'))()
+		end
+	end)
+	
+
+	MainSection:NewToggle("Fullbright-Infinity Fullbright", "Making u see in the dark ", function(state)
+		if state then
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Full%20bright'))()
+		else
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/combatlegnd/combatlegnd/main/Full%20bright'))()
+		end
+	end)
+	
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Accpet requested script by ";
+    Text = "combatlegnd#0440.";
+    Duration = 30;
+})
+
+	
+	
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "requested";
+    Text = "requested By ras#2436.";
+    Duration = 30;
+})
