@@ -1,0 +1,6 @@
+if  ["FigureToggle"].Value == true then
+            if LatestRoom.Value == 50 then
+                coroutine.resume(EntityCoroutine)
+            end
+        end
+    end)
