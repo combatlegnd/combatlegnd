@@ -1,3 +1,19 @@
+local function ApplyBookChams(inst)
+    if inst:IsDescendantOf(game:GetService("Workspace").CurrentRooms:FindFirstChild("50")) and game:GetService("ReplicatedStorage").GameData.LatestRoom.Value == 50 then
+        wait()
+        local Cham = Instance.new("Highlight")
+        Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+        Cham.FillColor = Color3.new(0, 1, 0.749019)
+        Cham.FillTransparency = 0.5
+        Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
+        Cham.Parent = game:GetService("CoreGui")
+        Cham.Enabled = OrionLib.Flags["BookToggle"].Value
+        Cham.Adornee = inst
+        Cham.RobloxLocked = true
+        return Cham
+    end
+end
+
 local function ApplyEntityChams(inst)
     wait()
     local Cham = Instance.new("Highlight")
