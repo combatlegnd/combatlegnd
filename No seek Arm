@@ -1,9 +1,0 @@
-
-game:GetService("Workspace").CurrentRooms.DescendantAdded:Connect(function(descendant)
-    if OrionLib.Flags["NoSeek"].Value == true and descendant.Name == ("Seek_Arm" or "ChandelierObstruction") then
-        task.spawn(function()
-            wait()
-            descendant:Destroy()
-        end)
-    end
-end)
