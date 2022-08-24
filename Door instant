@@ -1,0 +1,5 @@
+game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(prompt)
+    ["InstantToggle"].Value == true then
+        fireproximityprompt(prompt)
+    end
+end)
