@@ -345,3 +345,58 @@ Section:NewButton("Send Item", "ButtonInfo", function()
 end)
 local Tab = Window:NewTab("Credit")
 local Section = Tab:NewSection("combatlegnd#0440")
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Made By";
+    Text = "combatlegnd.";
+    Duration = 60;
+})
+ 
+ game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Made By";
+    Text = "combatlegnd.";
+    Duration = 50;
+})
+ 
+ game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Made By";
+    Text = "combatlegnd.";
+    Duration = 40;
+})
+ 
+ game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Made By";
+    Text = "combatlegnd.";
+    Duration = 60;
+})
+ 
+ game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Made By";
+    Text = "combatlegnd.";
+    Duration = 50;
+})
+ 
+ game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Made By";
+    Text = "combatlegnd.";
+    Duration = 40;
+})
+ 
+ game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Made By";
+    Text = "combatlegnd.";
+    Duration = 60;
+})
+ 
+ game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Made By";
+    Text = "combatlegnd#0440.";
+    Duration = 50;
+})
+ 
+ game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Get Good ";
+    Text = "Get Good get my scrips.";
+    Duration = 40;
+})
+ 
