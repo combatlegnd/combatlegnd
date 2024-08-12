@@ -1,0 +1,304 @@
+local Main2 = Instance.new("ScreenGui")
+local MainSTR = Instance.new("Frame")
+local Line = Instance.new("Frame")
+local SMain = Instance.new("TextButton")
+local Box = Instance.new("Frame")
+local Silentaim = Instance.new("TextButton")
+local Aimlock = Instance.new("TextButton")
+local Box2 = Instance.new("Frame")
+local claimallowance = Instance.new("TextButton")
+local Visuals = Instance.new("TextButton")
+local Credit = Instance.new("TextButton")
+local CreditS = Instance.new("Frame")
+local Reavn = Instance.new("TextLabel")
+local TextLabel = Instance.new("TextLabel")
+
+
+Main2.Name = "Main2"
+Main2.Parent = game.CoreGui
+Main2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainSTR.Name = "MainSTR"
+MainSTR.Parent = Main2
+MainSTR.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+MainSTR.BorderColor3 = Color3.fromRGB(255, 0, 4)
+MainSTR.Position = UDim2.new(0.365872651, 0, 0.179210633, 0)
+MainSTR.Size = UDim2.new(0, 463, 0, 602)
+MainSTR.Draggable = true
+MainSTR.Active = true
+
+Line.Name = "Line"
+Line.Parent = MainSTR
+Line.BackgroundColor3 = Color3.fromRGB(89, 0, 1)
+Line.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Line.BorderSizePixel = 0
+Line.Position = UDim2.new(0, 0, 0.0787666291, 0)
+Line.Size = UDim2.new(0, 463, 0, 1)
+
+SMain.Name = "SMain"
+SMain.Parent = MainSTR
+SMain.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+SMain.BorderColor3 = Color3.fromRGB(139, 0, 2)
+SMain.Position = UDim2.new(0.0194384456, 0, 0.0101010082, 0)
+SMain.Size = UDim2.new(0, 103, 0, 30)
+SMain.ZIndex = -1
+SMain.Font = Enum.Font.SourceSans
+SMain.Text = "Main"
+SMain.TextColor3 = Color3.fromRGB(0, 0, 0)
+SMain.TextScaled = true
+SMain.TextSize = 14.000
+SMain.TextStrokeTransparency = 0.800
+SMain.TextTransparency = 0.100
+SMain.TextWrapped = true
+SMain.MouseButton1Down:Connect(function()
+	Box.Visible = true
+	Box2.Visible = true
+	CreditS.Visible = false
+end)
+
+
+Box.Name = "Box"
+Box.Parent = SMain
+Box.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+Box.BackgroundTransparency = 0.500
+Box.BorderColor3 = Color3.fromRGB(255, 0, 4)
+Box.Position = UDim2.new(2.29939771, 0, 2.22954297, 0)
+Box.Size = UDim2.new(0, 211, 0, 300)
+Box.Visible = false
+
+Silentaim.Name = "Silentaim"
+Silentaim.Parent = Box
+Silentaim.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+Silentaim.BorderColor3 = Color3.fromRGB(255, 0, 4)
+Silentaim.Position = UDim2.new(0.0568720363, 0, 0.0666666701, 0)
+Silentaim.Size = UDim2.new(0, 190, 0, 20)
+Silentaim.Font = Enum.Font.SourceSans
+Silentaim.Text = "Silent Aim"
+Silentaim.TextColor3 = Color3.fromRGB(0, 0, 0)
+Silentaim.TextScaled = true
+Silentaim.TextSize = 14.000
+Silentaim.TextWrapped = true
+
+Aimlock.Name = "Aimlock"
+Aimlock.Parent = Box
+Aimlock.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+Aimlock.BorderColor3 = Color3.fromRGB(255, 0, 4)
+Aimlock.Position = UDim2.new(0.0521326996, 0, 0.366666675, 0)
+Aimlock.Size = UDim2.new(0, 191, 0, 23)
+Aimlock.Font = Enum.Font.SourceSans
+Aimlock.Text = "Aim Lock"
+Aimlock.TextColor3 = Color3.fromRGB(0, 0, 0)
+Aimlock.TextScaled = true
+Aimlock.TextSize = 14.000
+Aimlock.TextWrapped = true
+Aimlock.MouseButton1Down:Connect(function()
+	local ScreenGui = Instance.new("ScreenGui")
+	local Aimbot = Instance.new("Frame")
+	local Title = Instance.new("TextLabel")
+	local Toggle = Instance.new("TextButton")
+
+	print("negromancer ")
+	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Aimbot.Name = "Aimbot"
+	Aimbot.Parent = ScreenGui
+	Aimbot.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+	Aimbot.Position = UDim2.new(0.0599842146, 0, 0.358722359, 0)
+	Aimbot.Size = UDim2.new(0, 126, 0, 152)
+	Aimbot.BorderSizePixel = 1 
+	Aimbot.BorderColor3 = Color3.fromRGB(139, 0, 2)
+
+	Title.Name = "Title"
+	Title.Parent = Aimbot
+	Title.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+	Title.Size = UDim2.new(0, 126, 0, 50)
+	Title.Font = Enum.Font.SourceSans
+	Title.Text = "its not smooth"
+	Title.TextColor3 = Color3.fromRGB(139, 0, 2)
+	Title.TextSize = 20.000
+
+	Toggle.Name = "Toggle"
+	Toggle.Parent = Aimbot
+	Toggle.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+	Toggle.BorderSizePixel = 0
+	Toggle.Position = UDim2.new(0, 0, 0.473684222, 0)
+	Toggle.Size = UDim2.new(0, 126, 0, 50)
+	Toggle.Font = Enum.Font.SourceSans
+	Toggle.Text = "Off"
+	Toggle.TextColor3 = Color3.fromRGB(139, 0, 2)
+	Toggle.TextSize = 40.000
+
+
+
+	local function PNHLOYF_fake_script() -- Toggle.LocalScript 
+		local script = Instance.new('LocalScript', Toggle)
+
+		_G.aimbot = false
+		local camera = game.Workspace.CurrentCamera
+		local localplayer = game:GetService("Players").LocalPlayer
+
+		script.Parent.MouseButton1Click:Connect(function()
+			if _G.aimbot == false then
+				_G.aimbot = true
+				script.Parent.TextColor3 = Color3.fromRGB(0,170,0)
+				script.Parent.Text = "On"
+				function closestplayer()
+					local dist = math.huge -- math.huge means a really large number, 1M+.
+					local target = nil --- nil means no value
+					for i,v in pairs (game:GetService("Players"):GetPlayers()) do
+						if v ~= localplayer then
+							if v.Character and v.Character:FindFirstChild("Head") and _G.aimbot and v.Character.Humanoid.Health > 0 then --- creating the checks
+								local magnitude = (v.Character.Head.Position - localplayer.Character.Head.Position).magnitude
+								if magnitude < dist then
+									dist = magnitude
+									target = v
+								end
+
+							end
+						end
+					end
+					return target
+				end
+
+			else
+				_G.aimbot = false
+				script.Parent.TextColor3 = Color3.fromRGB(255,0,0)
+				script.Parent.Text = "Off"
+			end
+		end)
+
+		local settings = {
+			keybind = Enum.UserInputType.MouseButton2
+		}
+
+		local UIS = game:GetService("UserInputService")
+		local aiming = false --- this toggle will make it so we lock on to the person when we press our keybind
+
+		UIS.InputBegan:Connect(function(inp)
+			if inp.UserInputType == settings.keybind then
+				aiming = true
+			end
+		end)
+
+		UIS.InputEnded:Connect(function(inp)
+			if inp.UserInputType == settings.keybind then 
+				aiming = false
+			end
+		end)
+
+		game:GetService("RunService").RenderStepped:Connect(function()
+			if aiming then
+				camera.CFrame = CFrame.new(camera.CFrame.Position,closestplayer().Character.Head.Position) 
+			end
+		end)
+	end
+	coroutine.wrap(PNHLOYF_fake_script)()
+
+end)
+
+Box2.Name = "Box2"
+Box2.Parent = SMain
+Box2.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+Box2.BackgroundTransparency = 0.500
+Box2.BorderColor3 = Color3.fromRGB(255, 0, 4)
+Box2.Position = UDim2.new(-0.00157328486, 0, 2.22954297, 0)
+Box2.Size = UDim2.new(0, 211, 0, 498)
+Box2.Visible = false
+
+claimallowance.Name = "claimallowance"
+claimallowance.Parent = Box2
+claimallowance.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+claimallowance.BorderColor3 = Color3.fromRGB(255, 0, 4)
+claimallowance.Position = UDim2.new(0.0339436457, 0, 0.0301204212, 0)
+claimallowance.Size = UDim2.new(0, 195, 0, 59)
+claimallowance.Font = Enum.Font.SourceSans
+claimallowance.Text = "auto claim allowance "
+claimallowance.TextColor3 = Color3.fromRGB(0, 0, 0)
+claimallowance.TextSize = 24.000
+claimallowance.TextWrapped = true
+claimallowance.MouseButton1Down:Connect(function()
+	getgenv().AutoClaimATM = true
+
+	task.spawn(function()
+		while getgenv().AutoClaimATM == true do
+			if game.Players.LocalPlayer.Character == nil then 
+				return
+			end
+			for i, ATM in ipairs(workspace:WaitForChild("Map"):WaitForChild("ATMz"):GetChildren()) do
+				if ATM:FindFirstChild("MainPart") and (ATM:FindFirstChild("MainPart").Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then
+					game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("CLMZALOW"):InvokeServer(ATM:FindFirstChild("MainPart"))
+				end
+			end
+			task.wait()
+		end
+	end)
+end)
+
+Visuals.Name = "Visuals"
+Visuals.Parent = MainSTR
+Visuals.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+Visuals.BorderColor3 = Color3.fromRGB(139, 0, 2)
+Visuals.Position = UDim2.new(0.298056155, 0, 0.00996677764, 0)
+Visuals.Size = UDim2.new(0, 140, 0, 30)
+Visuals.Font = Enum.Font.SourceSans
+Visuals.Text = "Visuals"
+Visuals.TextColor3 = Color3.fromRGB(0, 0, 0)
+Visuals.TextScaled = true
+Visuals.TextSize = 14.000
+Visuals.TextStrokeTransparency = 0.800
+Visuals.TextWrapped = true
+
+Credit.Name = "Credit"
+Credit.Parent = MainSTR
+Credit.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+Credit.BorderColor3 = Color3.fromRGB(139, 0, 2)
+Credit.Position = UDim2.new(0.678185761, 0, 0.00996677764, 0)
+Credit.Size = UDim2.new(0, 135, 0, 35)
+Credit.Font = Enum.Font.SourceSans
+Credit.Text = "Credit"
+Credit.TextColor3 = Color3.fromRGB(0, 0, 0)
+Credit.TextScaled = true
+Credit.TextSize = 14.000
+Credit.TextWrapped = true
+Credit.MouseButton1Down:Connect(function()
+	Box.Visible = false
+	Box2.Visible = false
+	CreditS.Visible = true
+end)
+
+CreditS.Name = "CreditS"
+CreditS.Parent = Credit
+CreditS.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+CreditS.BackgroundTransparency = 0.500
+CreditS.BorderColor3 = Color3.fromRGB(255, 0, 4)
+CreditS.Position = UDim2.new(-2.13763881, 0, 1.62954271, 0)
+CreditS.Size = UDim2.new(0, 417, 0, 255)
+CreditS.Visible = false
+
+Reavn.Name = "Reavn"
+Reavn.Parent = CreditS
+Reavn.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+Reavn.BorderColor3 = Color3.fromRGB(255, 0, 4)
+Reavn.BorderSizePixel = 0
+Reavn.Position = UDim2.new(0.023980815, 0, 0.0980392173, 0)
+Reavn.Size = UDim2.new(0, 393, 0, 50)
+Reavn.Font = Enum.Font.SourceSans
+Reavn.Text = "Gui made by : Reavn_Hammer"
+Reavn.TextColor3 = Color3.fromRGB(0, 0, 0)
+Reavn.TextScaled = true
+Reavn.TextSize = 14.000
+Reavn.TextWrapped = true
+
+TextLabel.Parent = CreditS
+TextLabel.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+TextLabel.BorderColor3 = Color3.fromRGB(255, 0, 4)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0287769791, 0, 0.458823532, 0)
+TextLabel.Size = UDim2.new(0, 393, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Scripting: qwertyu4t55567rgdf"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
