@@ -1,6 +1,0 @@
-   Callback = function()
-        pcall(function()
-            game:GetService("ReplicatedStorage").Bricks.Jumpscare:Destroy()
-        end)
-  	end    
-})	
