@@ -1,5 +1,0 @@
-workspace.CurrentCamera.ChildAdded:Connect(function(child)
-    if child.Name == "Screech" and ["ScreechToggle"].Value == true then
-        child:Destroy()
-    end
-end)
