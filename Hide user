@@ -1,5 +1,0 @@
-game.Players.PlayerAdded:connect(function(player)
-    player.CharacterAdded:connect(function(character)
-        character:WaitForChild("Humanoid").DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
-    end)
-end)
