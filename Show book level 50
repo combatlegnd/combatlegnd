@@ -1,5 +1,0 @@
-if ["BookToggle"].Value == true then
-            if LatestRoom.Value == 50 then
-                coroutine.resume(BookCoroutine)
-            end
-        end
