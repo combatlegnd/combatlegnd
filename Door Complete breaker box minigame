@@ -1,4 +1,0 @@
-Callback = function()
-        game:GetService("ReplicatedStorage").Bricks.EBF:FireServer()
-  	end    
-})
