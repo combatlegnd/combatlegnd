@@ -1096,7 +1096,7 @@ local function ParentUI(UI: Instance, SkipHiddenUI: boolean?)
 end
 
 local ScreenGui = New("ScreenGui", {
-    Name = "Obsidian",
+    Name = "2935//.123476/123/123/23/123/",
     DisplayOrder = 999,
     ResetOnSpawn = false,
 })
