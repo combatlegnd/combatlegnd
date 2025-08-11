@@ -6550,29 +6550,52 @@ Library:GiveSignal(Teams.ChildAdded:Connect(OnTeamChange))
 Library:GiveSignal(Teams.ChildRemoved:Connect(OnTeamChange))
 
 getgenv().Library = Library
-task.spawn(function()
-    local function forceParentToGethui(gui)
-        if not gui:IsA("ScreenGui") then return end
-        gui.Name = generateGarbageName()
-        local success, hui = pcall(function()
-            return (gethui or function() error("gethui missing") end)()
-        end)
-        
-        if success and hui then
-            gui.Parent = hui
-        else
-            gui:Destroy()
-            warn("MISSION FAILED: gethui is shit - UI destroyed")
-            return false
-        end
-        return true
-    end
-    for _, gui in ipairs(game:GetService("CoreGui"):GetChildren()) do
-        if gui:IsA("ScreenGui") and (gui.Name == "Obsidian" or gui.Name:find("Obsidian")) then
-            if not forceParentToGethui(gui) then
-                break 
+local function forceParentObsidianToGethui()
+    -- Find the Obsidian ScreenGui
+    local obsidianGui = game:GetService("CoreGui"):FindFirstChild("Obsidian")
+    
+    if not obsidianGui then
+        -- Alternative search if not found by exact name
+        for _, child in pairs(game:GetService("CoreGui"):GetChildren()) do
+            if child:IsA("ScreenGui") and child.Name:lower():find("obsidian") then
+                obsidianGui = child
+                break
             end
         end
     end
-end)
+
+    if not obsidianGui then
+        warn("MISSION FAILED: Could not find Obsidian ScreenGui")
+        return false
+    end
+
+    -- Get gethui
+    local success, hui = pcall(function()
+        return (gethui or function() error("gethui not available") end)()
+    end)
+
+    if not success or not hui then
+        warn("MISSION FAILED: gethui is not available")
+        obsidianGui:Destroy()
+        return false
+    end
+
+    -- Rename and reparent
+    obsidianGui.Name = generateGarbageName()
+    obsidianGui.Parent = hui
+
+    -- Verify
+    if obsidianGui:IsDescendantOf(hui) then
+        print("SUCCESS: Obsidian UI parented to gethui as "..obsidianGui.Name)
+        return true
+    else
+        warn("MISSION FAILED: Parenting verification failed")
+        obsidianGui:Destroy()
+        return false
+    end
+end
+
+-- Run the parenting
+task.spawn(forceParentObsidianToGethui)
+print("asd")
 return Library
