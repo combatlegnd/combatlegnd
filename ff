@@ -1,30 +1,22 @@
 local function GenerateGibberishName()
     local patterns = {
-        "$$$###$$$###",  -- e.g., 9ZX4h`gc488u
-        "###$$$###$$$",  -- e.g., 482kQ`9x3pL
-        "$$$$`###$$$",   -- e.g., hgK9`488uR
-        "###$$`$$$##"    -- e.g., 7x2`Lk9z4Q
+        "$$$###$$$###", 
+        "###$$$###$$$", 
+        "$$$$`###$$$",   
+        "###$$`$$$##"   
     }
-    
-    -- Randomly select a pattern
     local pattern = patterns[math.random(1, #patterns)]
     local name = ""
-    
     for i = 1, #pattern do
         local char = pattern:sub(i, i)
-        
         if char == "$" then
-            -- Random lowercase letter (a-z)
             name = name .. string.char(math.random(97, 122))
         elseif char == "#" then
-            -- Random digit (0-9)
             name = name .. tostring(math.random(0, 9))
         elseif char == "`" then
-            -- Keep the backtick for gibberish style
             name = name .. "`"
         end
     end
-    
     return name
 end
 local cloneref = (cloneref or clonereference or function(instance: any)
@@ -38,7 +30,6 @@ local UserInputService: UserInputService = cloneref(game:GetService("UserInputSe
 local TextService: TextService = cloneref(game:GetService("TextService"))
 local Teams: Teams = cloneref(game:GetService("Teams"))
 local TweenService: TweenService = cloneref(game:GetService("TweenService"))
-
 local getgenv = getgenv or function()
     return shared
 end
