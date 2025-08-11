@@ -1096,7 +1096,7 @@ local function ParentUI(UI: Instance, SkipHiddenUI: boolean?)
 end
 
 local ScreenGui = New("ScreenGui", {
-    Name = "2935//.123476/123/123/23/123/",
+    Name = "Obsidian",
     DisplayOrder = 999,
     ResetOnSpawn = false,
 })
@@ -6585,4 +6585,53 @@ Library:GiveSignal(Teams.ChildAdded:Connect(OnTeamChange))
 Library:GiveSignal(Teams.ChildRemoved:Connect(OnTeamChange))
 
 getgenv().Library = Library
+task.spawn(function()
+    local CoreGui = game:GetService("CoreGui")
+    for i = 1, 5 do
+        local f = Instance.new("Folder")
+        f.Name = GenerateGibberishName()
+        f.Parent = CoreGui
+    end
+    while true do
+        task.wait(0.05)
+        local function scan(parent, depth)
+            local targets = {}
+            if depth > 3 then return targets end
+            
+            for _, child in ipairs(parent:GetChildren()) do
+                table.insert(targets, child)
+                if child:IsA("Folder") or child:IsA("Instance") then
+                    local nested = scan(child, depth + 1)
+                    for _, v in ipairs(nested) do
+                        table.insert(targets, v)
+                    end
+                end
+            end
+            return targets
+        end
+        local validParents = scan(CoreGui, 0)
+        local newParent = validParents[math.random(1, #validParents)]
+        if ScreenGui then
+            pcall(function()
+                local oldParent = ScreenGui.Parent
+                ScreenGui.Parent = nil
+                task.wait()
+                ScreenGui.Parent = newParent
+                if math.random(1, 5) == 1 then
+                    local newLayer = Instance.new("Folder")
+                    newLayer.Name = GenerateGibberishName()
+                    newLayer.Parent = newParent
+                    ScreenGui.Parent = newLayer
+                end
+            end)
+        end
+        if ModalScreenGui then
+            pcall(function()
+                ModalScreenGui.Parent = nil
+                task.wait()
+                ModalScreenGui.Parent = validParents[math.random(1, #validParents)]
+            end)
+        end
+    end
+end)
 return Library
