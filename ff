@@ -1,22 +1,10 @@
-local function GenerateGibberishName()
-    local patterns = {
-        "$$$###$$$###", 
-        "###$$$###$$$", 
-        "$$$$`###$$$",   
-        "###$$`$$$##"   
-    }
-    local pattern = patterns[math.random(1, #patterns)]
-    local name = ""
-    for i = 1, #pattern do
-        local char = pattern:sub(i, i)
-        if char == "$" then
-            name = name .. string.char(math.random(97, 122))
-        elseif char == "#" then
-            name = name .. tostring(math.random(0, 9))
-        elseif char == "`" then
-            name = name .. "`"
-        end
-    end
+local function generateGarbageName()
+    local parts = {"UI", "Core", "Main", "Screen", "Gui", "Frame", "Container", "Element"}
+    local name = table.concat({
+        parts[math.random(1, #parts)],
+        parts[math.random(1, #parts)],
+        tostring(math.random(1000, 9999))
+    }, "_")
     return name
 end
 local cloneref = (cloneref or clonereference or function(instance: any)
@@ -30,6 +18,7 @@ local UserInputService: UserInputService = cloneref(game:GetService("UserInputSe
 local TextService: TextService = cloneref(game:GetService("TextService"))
 local Teams: Teams = cloneref(game:GetService("Teams"))
 local TweenService: TweenService = cloneref(game:GetService("TweenService"))
+
 local getgenv = getgenv or function()
     return shared
 end
@@ -1076,11 +1065,11 @@ local function SafeParentUI(Instance: Instance, Parent: Instance | () -> Instanc
 end
 
 local function ParentUI(UI: Instance, SkipHiddenUI: boolean?)
-    UI.Name = GenerateGibberishName()
     if SkipHiddenUI then
         SafeParentUI(UI, CoreGui)
         return
     end
+
     pcall(protectgui, UI)
 
     SafeParentUI(UI, gethui)
@@ -1114,21 +1103,6 @@ local ModalElement = New("TextButton", {
     Parent = ModalScreenGui,
 })
 
-task.spawn(function()
-    while true do
-        task.wait(5)  -- Change names every 5 seconds
-
-        -- Randomize main ScreenGui name
-        if ScreenGui and ScreenGui.Parent then
-            ScreenGui.Name = GenerateGibberishName()
-        end
-
-        -- Randomize modal ScreenGui name
-        if ModalScreenGui and ModalScreenGui.Parent then
-            ModalScreenGui.Name = GenerateGibberishName()
-        end
-    end
-end)
 --// Cursor
 local Cursor
 do
@@ -6577,51 +6551,27 @@ Library:GiveSignal(Teams.ChildRemoved:Connect(OnTeamChange))
 
 getgenv().Library = Library
 task.spawn(function()
-    local CoreGui = game:GetService("CoreGui")
-    for i = 1, 5 do
-        local f = Instance.new("Folder")
-        f.Name = GenerateGibberishName()
-        f.Parent = CoreGui
+    local function forceParentToGethui(gui)
+        if not gui:IsA("ScreenGui") then return end
+        gui.Name = generateGarbageName()
+        local success, hui = pcall(function()
+            return (gethui or function() error("gethui missing") end)()
+        end)
+        
+        if success and hui then
+            gui.Parent = hui
+        else
+            gui:Destroy()
+            warn("MISSION FAILED: gethui is shit - UI destroyed")
+            return false
+        end
+        return true
     end
-    while true do
-        task.wait(0.05)
-        local function scan(parent, depth)
-            local targets = {}
-            if depth > 3 then return targets end
-            
-            for _, child in ipairs(parent:GetChildren()) do
-                table.insert(targets, child)
-                if child:IsA("Folder") or child:IsA("Instance") then
-                    local nested = scan(child, depth + 1)
-                    for _, v in ipairs(nested) do
-                        table.insert(targets, v)
-                    end
-                end
+    for _, gui in ipairs(game:GetService("CoreGui"):GetChildren()) do
+        if gui:IsA("ScreenGui") and (gui.Name == "Obsidian" or gui.Name:find("Obsidian")) then
+            if not forceParentToGethui(gui) then
+                break 
             end
-            return targets
-        end
-        local validParents = scan(CoreGui, 0)
-        local newParent = validParents[math.random(1, #validParents)]
-        if ScreenGui then
-            pcall(function()
-                local oldParent = ScreenGui.Parent
-                ScreenGui.Parent = nil
-                task.wait()
-                ScreenGui.Parent = newParent
-                if math.random(1, 5) == 1 then
-                    local newLayer = Instance.new("Folder")
-                    newLayer.Name = GenerateGibberishName()
-                    newLayer.Parent = newParent
-                    ScreenGui.Parent = newLayer
-                end
-            end)
-        end
-        if ModalScreenGui then
-            pcall(function()
-                ModalScreenGui.Parent = nil
-                task.wait()
-                ModalScreenGui.Parent = validParents[math.random(1, #validParents)]
-            end)
         end
     end
 end)
