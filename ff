@@ -2262,6 +2262,7 @@ do
         ColorPicker.Hue, ColorPicker.Sat, ColorPicker.Vib = ColorPicker.Value:ToHSV()
 
         local Holder = New("TextButton", {
+			Name = "	",
             BackgroundColor3 = ColorPicker.Value,
             BorderColor3 = Library:GetDarkerColor(ColorPicker.Value),
             BorderSizePixel = 1,
@@ -2271,6 +2272,7 @@ do
         })
 
         local HolderTransparency = New("ImageLabel", {
+			Name = "	",
             Image = ObsidianImageManager.GetAsset("TransparencyTexture"),
             ImageTransparency = (1 - ColorPicker.Transparency),
             ScaleType = Enum.ScaleType.Tile,
@@ -2281,6 +2283,7 @@ do
 
         --// Color Menu \\--
         local ColorMenu = Library:AddContextMenu(
+			Name = "	",
             Holder,
             UDim2.fromOffset(Info.Transparency and 256 or 234, 0),
             function()
@@ -2292,6 +2295,7 @@ do
         ColorPicker.ColorMenu = ColorMenu
 
         New("UIPadding", {
+			Name = "	",
             PaddingBottom = UDim.new(0, 6),
             PaddingLeft = UDim.new(0, 6),
             PaddingRight = UDim.new(0, 6),
@@ -2301,6 +2305,7 @@ do
 
         if typeof(Info.Title) == "string" then
             New("TextLabel", {
+				Name = "	",
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 0, 8),
                 Text = Info.Title,
@@ -2311,11 +2316,13 @@ do
         end
 
         local ColorHolder = New("Frame", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.new(1, 0, 0, 200),
             Parent = ColorMenu.Menu,
         })
         New("UIListLayout", {
+			Name = "	",
             FillDirection = Enum.FillDirection.Horizontal,
             Padding = UDim.new(0, 6),
             Parent = ColorHolder,
@@ -2323,6 +2330,7 @@ do
 
         --// Sat Map
         local SatVipMap = New("ImageButton", {
+			Name = "	",
             BackgroundColor3 = ColorPicker.Value,
             Image = ObsidianImageManager.GetAsset("SaturationMap"),
             Size = UDim2.fromOffset(200, 200),
@@ -2330,33 +2338,39 @@ do
         })
 
         local SatVibCursor = New("Frame", {
+			Name = "	",
             AnchorPoint = Vector2.new(0.5, 0.5),
             BackgroundColor3 = "White",
             Size = UDim2.fromOffset(6, 6),
             Parent = SatVipMap,
         })
         New("UICorner", {
+			Name = "	",
             CornerRadius = UDim.new(1, 0),
             Parent = SatVibCursor,
         })
         New("UIStroke", {
+			Name = "	",
             Color = "Dark",
             Parent = SatVibCursor,
         })
 
         --// Hue
         local HueSelector = New("TextButton", {
+			Name = "	",
             Size = UDim2.fromOffset(16, 200),
             Text = "",
             Parent = ColorHolder,
         })
         New("UIGradient", {
+			Name = "	",
             Color = ColorSequence.new(HueSequenceTable),
             Rotation = 90,
             Parent = HueSelector,
         })
 
         local HueCursor = New("Frame", {
+			Name = "	",
             AnchorPoint = Vector2.new(0.5, 0.5),
             BackgroundColor3 = "White",
             BorderColor3 = "Dark",
@@ -2370,6 +2384,7 @@ do
         local TransparencySelector, TransparencyColor, TransparencyCursor
         if Info.Transparency then
             TransparencySelector = New("ImageButton", {
+				Name = "	",
                 Image = ObsidianImageManager.GetAsset("TransparencyTexture"),
                 ScaleType = Enum.ScaleType.Tile,
                 Size = UDim2.fromOffset(16, 200),
@@ -2378,11 +2393,13 @@ do
             })
 
             TransparencyColor = New("Frame", {
+				Name = "	",
                 BackgroundColor3 = ColorPicker.Value,
                 Size = UDim2.fromScale(1, 1),
                 Parent = TransparencySelector,
             })
             New("UIGradient", {
+				Name = "	",
                 Rotation = 90,
                 Transparency = NumberSequence.new({
                     NumberSequenceKeypoint.new(0, 0),
@@ -2392,6 +2409,7 @@ do
             })
 
             TransparencyCursor = New("Frame", {
+				Name = "	",
                 AnchorPoint = Vector2.new(0.5, 0.5),
                 BackgroundColor3 = "White",
                 BorderColor3 = "Dark",
@@ -2448,6 +2466,7 @@ do
         do
             local function CreateButton(Text, Func)
                 local Button = New("TextButton", {
+					Name = "	",
                     BackgroundTransparency = 1,
                     Size = UDim2.new(1, 0, 0, 21),
                     Text = Text,
@@ -3323,6 +3342,7 @@ do
         }
 
         local Button = New("TextButton", {
+			Name = "	",
             Active = not Toggle.Disabled,
             BackgroundTransparency = 1,
             Size = UDim2.new(1, 0, 0, 18),
@@ -3332,6 +3352,7 @@ do
         })
 
         local Label = New("TextLabel", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.new(1, -40, 1, 0),
             Text = Toggle.Text,
@@ -3342,6 +3363,7 @@ do
         })
 
         New("UIListLayout", {
+			Name = "	",
             FillDirection = Enum.FillDirection.Horizontal,
             HorizontalAlignment = Enum.HorizontalAlignment.Right,
             Padding = UDim.new(0, 6),
@@ -3349,6 +3371,7 @@ do
         })
 
         local Switch = New("Frame", {
+			Name = "	",
             AnchorPoint = Vector2.new(1, 0),
             BackgroundColor3 = "MainColor",
             Position = UDim2.fromScale(1, 0),
@@ -3356,10 +3379,12 @@ do
             Parent = Button,
         })
         New("UICorner", {
+			Name = "	",
             CornerRadius = UDim.new(1, 0),
             Parent = Switch,
         })
         New("UIPadding", {
+			Name = "	",
             PaddingBottom = UDim.new(0, 2),
             PaddingLeft = UDim.new(0, 2),
             PaddingRight = UDim.new(0, 2),
@@ -3367,17 +3392,20 @@ do
             Parent = Switch,
         })
         local SwitchStroke = New("UIStroke", {
+			Name = "	",
             Color = "OutlineColor",
             Parent = Switch,
         })
 
         local Ball = New("Frame", {
+			Name = "	",
             BackgroundColor3 = "FontColor",
             Size = UDim2.fromScale(1, 1),
             SizeConstraint = Enum.SizeConstraint.RelativeYY,
             Parent = Switch,
         })
         New("UICorner", {
+			Name = "	",
             CornerRadius = UDim.new(1, 0),
             Parent = Ball,
         })
@@ -3711,6 +3739,7 @@ do
         local SliderLabel
         if not Info.Compact then
             SliderLabel = New("TextLabel", {
+				Name = "	",
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 0, 14),
                 Text = Slider.Text,
@@ -3721,6 +3750,7 @@ do
         end
 
         local Bar = New("TextButton", {
+			Name = "	",
             Active = not Slider.Disabled,
             AnchorPoint = Vector2.new(0, 1),
             BackgroundColor3 = "MainColor",
@@ -3733,6 +3763,7 @@ do
         })
 
         local DisplayLabel = New("TextLabel", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.fromScale(1, 1),
             Text = "",
@@ -3741,6 +3772,7 @@ do
             Parent = Bar,
         })
         New("UIStroke", {
+			Name = "	",
             ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
             Color = "Dark",
             LineJoinMode = Enum.LineJoinMode.Miter,
@@ -3748,6 +3780,7 @@ do
         })
 
         local Fill = New("Frame", {
+			Name = "	",
             BackgroundColor3 = "AccentColor",
             Size = UDim2.fromScale(0.5, 1),
             Parent = Bar,
@@ -3955,6 +3988,7 @@ do
         }
 
         local Holder = New("Frame", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.new(1, 0, 0, Dropdown.Text and 39 or 21),
             Visible = Dropdown.Visible,
@@ -3962,6 +3996,7 @@ do
         })
 
         local Label = New("TextLabel", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.new(1, 0, 0, 14),
             Text = Dropdown.Text,
@@ -3972,6 +4007,7 @@ do
         })
 
         local Display = New("TextButton", {
+			Name = "	",
             Active = not Dropdown.Disabled,
             AnchorPoint = Vector2.new(0, 1),
             BackgroundColor3 = "MainColor",
@@ -3986,12 +4022,14 @@ do
         })
 
         New("UIPadding", {
+			Name = "	",
             PaddingLeft = UDim.new(0, 8),
             PaddingRight = UDim.new(0, 4),
             Parent = Display,
         })
 
         local ArrowImage = New("ImageLabel", {
+			Name = "	",
             AnchorPoint = Vector2.new(1, 0.5),
             Image = ArrowIcon and ArrowIcon.Url or "",
             ImageColor3 = "FontColor",
@@ -4006,6 +4044,7 @@ do
         local SearchBox
         if Info.Searchable then
             SearchBox = New("TextBox", {
+				Name = "	",
                 BackgroundTransparency = 1,
                 PlaceholderText = "Search...",
                 Position = UDim2.fromOffset(-8, 0),
@@ -4016,6 +4055,7 @@ do
                 Parent = Display,
             })
             New("UIPadding", {
+				Name = "	",
                 PaddingLeft = UDim.new(0, 8),
                 Parent = SearchBox,
             })
@@ -4138,6 +4178,7 @@ do
                 local Table = {}
 
                 local Button = New("TextButton", {
+					Name = "	",
                     BackgroundColor3 = "MainColor",
                     BackgroundTransparency = 1,
                     LayoutOrder = IsDisabled and 1 or 0,
@@ -4149,6 +4190,7 @@ do
                     Parent = MenuTable.Menu,
                 })
                 New("UIPadding", {
+					Name = "	",
                     PaddingLeft = UDim.new(0, 7),
                     PaddingRight = UDim.new(0, 7),
                     Parent = Button,
@@ -5320,6 +5362,7 @@ function Library:CreateWindow(WindowInfo)
         })
 
         MainFrame = New("Frame", {
+			Name = "	",
             BackgroundColor3 = function()
                 return Library:GetBetterColor(Library.Scheme.BackgroundColor, -1)
             end,
@@ -5334,6 +5377,7 @@ function Library:CreateWindow(WindowInfo)
             },
         })
         New("UICorner", {
+			Name = "	",
             CornerRadius = UDim.new(0, WindowInfo.CornerRadius - 1),
             Parent = MainFrame,
         })
@@ -5361,6 +5405,7 @@ function Library:CreateWindow(WindowInfo)
 
         if WindowInfo.BackgroundImage then
             New("ImageLabel", {
+				Name = "	",
                 Image = WindowInfo.BackgroundImage,
                 Position = UDim2.fromScale(0, 0),
                 Size = UDim2.fromScale(1, 1),
@@ -5378,6 +5423,7 @@ function Library:CreateWindow(WindowInfo)
 
         --// Top Bar \\-
         local TopBar = New("Frame", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.new(1, 0, 0, 48),
             Parent = MainFrame,
@@ -5386,11 +5432,13 @@ function Library:CreateWindow(WindowInfo)
 
         --// Title
         local TitleHolder = New("Frame", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.fromScale(0.3, 1),
             Parent = TopBar,
         })
         New("UIListLayout", {
+			Name = "	",
             FillDirection = Enum.FillDirection.Horizontal,
             HorizontalAlignment = Enum.HorizontalAlignment.Center,
             VerticalAlignment = Enum.VerticalAlignment.Center,
@@ -5400,6 +5448,7 @@ function Library:CreateWindow(WindowInfo)
 
         if WindowInfo.Icon then
             New("ImageLabel", {
+				Name = "	",
                 Image = if tonumber(WindowInfo.Icon) then `rbxassetid://{WindowInfo.Icon}` else WindowInfo.Icon,
                 Size = WindowInfo.IconSize,
                 Parent = TitleHolder,
@@ -5413,6 +5462,7 @@ function Library:CreateWindow(WindowInfo)
             TitleHolder.AbsoluteSize.X - (WindowInfo.Icon and WindowInfo.IconSize.X.Offset + 6 or 0) - 12
         )
         New("TextLabel", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.new(0, X, 1, 0),
             Text = WindowInfo.Title,
@@ -5422,6 +5472,7 @@ function Library:CreateWindow(WindowInfo)
 
         --// Top Right Bar
         local RightWrapper = New("Frame", {
+			Name = "	",
             BackgroundTransparency = 1,
             AnchorPoint = Vector2.new(0, 0.5),
             Position = UDim2.new(0.3, 8, 0.5, 0),
@@ -5430,6 +5481,7 @@ function Library:CreateWindow(WindowInfo)
         })
 
         New("UIListLayout", {
+			Name = "	",
             FillDirection = Enum.FillDirection.Horizontal,
             HorizontalAlignment = Enum.HorizontalAlignment.Right,
             VerticalAlignment = Enum.VerticalAlignment.Center,
@@ -5438,6 +5490,7 @@ function Library:CreateWindow(WindowInfo)
         })
 
         CurrentTabInfo = New("Frame", {
+			Name = "	",
             Size = UDim2.fromScale(WindowInfo.DisableSearch and 1 or 0.5, 1),
             Visible = false,
             BackgroundTransparency = 1,
@@ -5445,6 +5498,7 @@ function Library:CreateWindow(WindowInfo)
         })
 
         New("UIListLayout", {
+			Name = "	",
             FillDirection = Enum.FillDirection.Vertical,
             HorizontalAlignment = Enum.HorizontalAlignment.Left,
             VerticalAlignment = Enum.VerticalAlignment.Center,
@@ -5452,6 +5506,7 @@ function Library:CreateWindow(WindowInfo)
         })
 
         New("UIPadding", {
+			Name = "	",
             PaddingBottom = UDim.new(0, 8),
             PaddingLeft = UDim.new(0, 8),
             PaddingRight = UDim.new(0, 8),
@@ -5460,6 +5515,7 @@ function Library:CreateWindow(WindowInfo)
         })
 
         CurrentTabLabel = New("TextLabel", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.fromScale(1, 0),
             AutomaticSize = Enum.AutomaticSize.Y,
@@ -5470,6 +5526,7 @@ function Library:CreateWindow(WindowInfo)
         })
 
         CurrentTabDescription = New("TextLabel", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.fromScale(1, 0),
             AutomaticSize = Enum.AutomaticSize.Y,
@@ -5482,6 +5539,7 @@ function Library:CreateWindow(WindowInfo)
         })
 
         SearchBox = New("TextBox", {
+			Name = "	",
             BackgroundColor3 = "MainColor",
             PlaceholderText = "Search",
             Size = UDim2.fromScale(1, 1),
@@ -5490,10 +5548,12 @@ function Library:CreateWindow(WindowInfo)
             Parent = RightWrapper,
         })
         New("UICorner", {
+			Name = "	",
             CornerRadius = UDim.new(0, WindowInfo.CornerRadius),
             Parent = SearchBox,
         })
         New("UIPadding", {
+			Name = "	",
             PaddingBottom = UDim.new(0, 8),
             PaddingLeft = UDim.new(0, 8),
             PaddingRight = UDim.new(0, 8),
@@ -5501,6 +5561,7 @@ function Library:CreateWindow(WindowInfo)
             Parent = SearchBox,
         })
         New("UIStroke", {
+			Name = "	",
             Color = "OutlineColor",
             Parent = SearchBox,
         })
@@ -5508,6 +5569,7 @@ function Library:CreateWindow(WindowInfo)
         local SearchIcon = Library:GetIcon("search")
         if SearchIcon then
             New("ImageLabel", {
+				Name = "	",
                 Image = SearchIcon.Url,
                 ImageColor3 = "FontColor",
                 ImageRectOffset = SearchIcon.ImageRectOffset,
@@ -5522,6 +5584,7 @@ function Library:CreateWindow(WindowInfo)
         local MoveIcon = Library:GetIcon("move")
         if MoveIcon then
             New("ImageLabel", {
+				Name = "	",
                 AnchorPoint = Vector2.new(1, 0.5),
                 Image = MoveIcon.Url,
                 ImageColor3 = "OutlineColor",
@@ -5536,6 +5599,7 @@ function Library:CreateWindow(WindowInfo)
 
         --// Bottom Bar \\--
         local BottomBar = New("Frame", {
+			Name = "	",
             AnchorPoint = Vector2.new(0, 1),
             BackgroundColor3 = function()
                 return Library:GetBetterColor(Library.Scheme.BackgroundColor, 4)
@@ -5553,12 +5617,14 @@ function Library:CreateWindow(WindowInfo)
             })
         end
         New("UICorner", {
+			Name = "	",
             CornerRadius = UDim.new(0, WindowInfo.CornerRadius - 1),
             Parent = BottomBar,
         })
 
         --// Footer
         New("TextLabel", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.fromScale(1, 1),
             Text = WindowInfo.Footer,
@@ -5570,6 +5636,7 @@ function Library:CreateWindow(WindowInfo)
         --// Resize Button
         if WindowInfo.Resizable then
             ResizeButton = New("TextButton", {
+				Name = "	",
                 AnchorPoint = Vector2.new(1, 0),
                 BackgroundTransparency = 1,
                 Position = UDim2.fromScale(1, 0),
@@ -5587,6 +5654,7 @@ function Library:CreateWindow(WindowInfo)
         end
 
         New("ImageLabel", {
+			Name = "	",
             Image = ResizeIcon and ResizeIcon.Url or "",
             ImageColor3 = "FontColor",
             ImageRectOffset = ResizeIcon and ResizeIcon.ImageRectOffset or Vector2.zero,
@@ -5599,6 +5667,7 @@ function Library:CreateWindow(WindowInfo)
 
         --// Tabs \\--
         Tabs = New("ScrollingFrame", {
+			Name = "	",
             AutomaticCanvasSize = Enum.AutomaticSize.Y,
             BackgroundColor3 = "BackgroundColor",
             CanvasSize = UDim2.fromScale(0, 0),
@@ -5609,11 +5678,13 @@ function Library:CreateWindow(WindowInfo)
         })
 
         New("UIListLayout", {
+			Name = "	",
             Parent = Tabs,
         })
 
         --// Container \\--
         Container = New("Frame", {
+			Name = "	",
             AnchorPoint = Vector2.new(1, 0),
             BackgroundColor3 = function()
                 return Library:GetBetterColor(Library.Scheme.BackgroundColor, 1)
@@ -5625,6 +5696,7 @@ function Library:CreateWindow(WindowInfo)
         })
 
         New("UIPadding", {
+			Name = "	",
             PaddingBottom = UDim.new(0, 0),
             PaddingLeft = UDim.new(0, 6),
             PaddingRight = UDim.new(0, 6),
@@ -5670,6 +5742,7 @@ function Library:CreateWindow(WindowInfo)
         Icon = Library:GetIcon(Icon)
         do
             TabButton = New("TextButton", {
+				Name = "	",
                 BackgroundColor3 = "MainColor",
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 0, 40),
@@ -5678,6 +5751,7 @@ function Library:CreateWindow(WindowInfo)
             })
 
             New("UIPadding", {
+				Name = "	",
                 PaddingBottom = UDim.new(0, 11),
                 PaddingLeft = UDim.new(0, 12),
                 PaddingRight = UDim.new(0, 12),
@@ -5686,6 +5760,7 @@ function Library:CreateWindow(WindowInfo)
             })
 
             TabLabel = New("TextLabel", {
+				Name = "	",
                 BackgroundTransparency = 1,
                 Position = UDim2.fromOffset(30, 0),
                 Size = UDim2.new(1, -30, 1, 0),
@@ -5698,6 +5773,7 @@ function Library:CreateWindow(WindowInfo)
 
             if Icon then
                 TabIcon = New("ImageLabel", {
+					Name = "	",
                     Image = Icon.Url,
                     ImageColor3 = "AccentColor",
                     ImageRectOffset = Icon.ImageRectOffset,
@@ -5711,6 +5787,7 @@ function Library:CreateWindow(WindowInfo)
 
             --// Tab Container \\--
             TabContainer = New("Frame", {
+				Name = "	",
                 BackgroundTransparency = 1,
                 Size = UDim2.fromScale(1, 1),
                 Visible = false,
@@ -5718,6 +5795,7 @@ function Library:CreateWindow(WindowInfo)
             })
 
             TabLeft = New("ScrollingFrame", {
+				Name = "	",
                 AutomaticCanvasSize = Enum.AutomaticSize.Y,
                 BackgroundTransparency = 1,
                 CanvasSize = UDim2.fromScale(0, 0),
@@ -5725,16 +5803,19 @@ function Library:CreateWindow(WindowInfo)
                 Parent = TabContainer,
             })
             New("UIListLayout", {
+				Name = "	",
                 Padding = UDim.new(0, 6),
                 Parent = TabLeft,
             })
             do
                 New("Frame", {
+					Name = "	",
                     BackgroundTransparency = 1,
                     LayoutOrder = -1,
                     Parent = TabLeft,
                 })
                 New("Frame", {
+					Name = "	",
                     BackgroundTransparency = 1,
                     LayoutOrder = 1,
                     Parent = TabLeft,
@@ -5745,6 +5826,7 @@ function Library:CreateWindow(WindowInfo)
             end
 
             TabRight = New("ScrollingFrame", {
+				Name = "	",
                 AnchorPoint = Vector2.new(1, 0),
                 AutomaticCanvasSize = Enum.AutomaticSize.Y,
                 BackgroundTransparency = 1,
@@ -5754,16 +5836,19 @@ function Library:CreateWindow(WindowInfo)
                 Parent = TabContainer,
             })
             New("UIListLayout", {
+				Name = "	",
                 Padding = UDim.new(0, 6),
                 Parent = TabRight,
             })
             do
                 New("Frame", {
+					Name = "	",
                     BackgroundTransparency = 1,
                     LayoutOrder = -1,
                     Parent = TabRight,
                 })
                 New("Frame", {
+					Name = "	",
                     BackgroundTransparency = 1,
                     LayoutOrder = 1,
                     Parent = TabRight,
@@ -5775,6 +5860,7 @@ function Library:CreateWindow(WindowInfo)
 
             --// Warning Box \\--
             WarningBox = New("Frame", {
+				Name = "	",
                 AutomaticSize = Enum.AutomaticSize.Y,
                 BackgroundColor3 = Color3.fromRGB(127, 0, 0),
                 BorderColor3 = Color3.fromRGB(255, 50, 50),
@@ -5787,6 +5873,7 @@ function Library:CreateWindow(WindowInfo)
             })
 
             WarningBoxScrollingFrame = New("ScrollingFrame", {
+				Name = "	",
                 BackgroundTransparency = 1,
                 BorderSizePixel = 0,
                 AnchorPoint = Vector2.new(0.5, 0.5),
@@ -5798,6 +5885,7 @@ function Library:CreateWindow(WindowInfo)
                 Parent = WarningBox,
             })
             New("UIPadding", {
+				Name = "	",
                 PaddingBottom = UDim.new(0, 4),
                 PaddingLeft = UDim.new(0, 6),
                 PaddingRight = UDim.new(0, 6),
@@ -5806,6 +5894,7 @@ function Library:CreateWindow(WindowInfo)
             })
 
             WarningTitle = New("TextLabel", {
+				Name = "	",
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 0, 14),
                 Text = "",
@@ -5815,6 +5904,7 @@ function Library:CreateWindow(WindowInfo)
                 Parent = WarningBoxScrollingFrame,
             })
             WarningStroke = New("UIStroke", {
+				Name = "	",
                 ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
                 Color = Color3.fromRGB(169, 0, 0),
                 LineJoinMode = Enum.LineJoinMode.Miter,
@@ -5822,6 +5912,7 @@ function Library:CreateWindow(WindowInfo)
             })
 
             WarningText = New("TextLabel", {
+				Name = "	",
                 BackgroundTransparency = 1,
                 Position = UDim2.fromOffset(0, 16),
                 Size = UDim2.new(1, 0, 1, -14),
@@ -5833,6 +5924,7 @@ function Library:CreateWindow(WindowInfo)
                 TextYAlignment = Enum.TextYAlignment.Top,
             })
             New("UIStroke", {
+				Name = "	",
                 ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual,
                 Color = "Dark",
                 LineJoinMode = Enum.LineJoinMode.Miter,
@@ -5967,12 +6059,14 @@ function Library:CreateWindow(WindowInfo)
 
             do
                 GroupboxHolder = New("Frame", {
+					Name = "	",
                     BackgroundColor3 = "BackgroundColor",
                     Position = UDim2.fromOffset(2, 2),
                     Size = UDim2.new(1, -4, 1, -4),
                     Parent = Background,
                 })
                 New("UICorner", {
+					Name = "	",
                     CornerRadius = UDim.new(0, WindowInfo.CornerRadius - 1),
                     Parent = GroupboxHolder,
                 })
@@ -5984,6 +6078,7 @@ function Library:CreateWindow(WindowInfo)
                 local BoxIcon = Library:GetIcon(Info.IconName)
                 if BoxIcon then
                     New("ImageLabel", {
+						Name = "	",
                         Image = BoxIcon.Url,
                         ImageColor3 = "AccentColor",
                         ImageRectOffset = BoxIcon.ImageRectOffset,
@@ -5995,6 +6090,7 @@ function Library:CreateWindow(WindowInfo)
                 end
 
                 GroupboxLabel = New("TextLabel", {
+					Name = "	",
                     BackgroundTransparency = 1,
                     Position = UDim2.fromOffset(BoxIcon and 24 or 0, 0),
                     Size = UDim2.new(1, 0, 0, 34),
@@ -6004,12 +6100,14 @@ function Library:CreateWindow(WindowInfo)
                     Parent = GroupboxHolder,
                 })
                 New("UIPadding", {
+					Name = "	",
                     PaddingLeft = UDim.new(0, 12),
                     PaddingRight = UDim.new(0, 12),
                     Parent = GroupboxLabel,
                 })
 
                 GroupboxContainer = New("Frame", {
+					Name = "	",
                     BackgroundTransparency = 1,
                     Position = UDim2.fromOffset(0, 35),
                     Size = UDim2.new(1, 0, 1, -35),
@@ -6017,10 +6115,12 @@ function Library:CreateWindow(WindowInfo)
                 })
 
                 GroupboxList = New("UIListLayout", {
+					Name = "	",
                     Padding = UDim.new(0, 8),
                     Parent = GroupboxContainer,
                 })
                 New("UIPadding", {
+					Name = "	",
                     PaddingBottom = UDim.new(0, 7),
                     PaddingLeft = UDim.new(0, 7),
                     PaddingRight = UDim.new(0, 7),
@@ -6061,12 +6161,14 @@ function Library:CreateWindow(WindowInfo)
 
         function Tab:AddTabbox(Info)
             local BoxHolder = New("Frame", {
+				Name = "	",
                 AutomaticSize = Enum.AutomaticSize.Y,
                 BackgroundTransparency = 1,
                 Size = UDim2.fromScale(1, 0),
                 Parent = Info.Side == 1 and TabLeft or TabRight,
             })
             New("UIListLayout", {
+				Name = "	",
                 Padding = UDim.new(0, 6),
                 Parent = BoxHolder,
             })
@@ -6082,12 +6184,14 @@ function Library:CreateWindow(WindowInfo)
 
             do
                 TabboxHolder = New("Frame", {
+					Name = "	",
                     BackgroundColor3 = "BackgroundColor",
                     Position = UDim2.fromOffset(2, 2),
                     Size = UDim2.new(1, -4, 1, -4),
                     Parent = Background,
                 })
                 New("UICorner", {
+					Name = "	",
                     CornerRadius = UDim.new(0, WindowInfo.CornerRadius - 1),
                     Parent = TabboxHolder,
                 })
@@ -6098,6 +6202,7 @@ function Library:CreateWindow(WindowInfo)
                     Parent = TabboxHolder,
                 })
                 New("UIListLayout", {
+					Name = "	",
                     FillDirection = Enum.FillDirection.Horizontal,
                     HorizontalFlex = Enum.UIFlexAlignment.Fill,
                     Parent = TabboxButtons,
