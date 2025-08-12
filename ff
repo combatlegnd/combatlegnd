@@ -5245,7 +5245,7 @@ function Library:CreateWindow(WindowInfo)
             BackgroundColor3 = function()
                 return Library:GetBetterColor(Library.Scheme.BackgroundColor, -1)
             end,
-            Name = "Main",
+            Name = "	",
             Position = WindowInfo.Position,
             Size = WindowInfo.Size,
             Visible = false,
@@ -5283,6 +5283,7 @@ function Library:CreateWindow(WindowInfo)
 
         if WindowInfo.BackgroundImage then
             New("ImageLabel", {
+				Name = "	"
                 Image = WindowInfo.BackgroundImage,
                 Position = UDim2.fromScale(0, 0),
                 Size = UDim2.fromScale(1, 1),
@@ -5300,6 +5301,7 @@ function Library:CreateWindow(WindowInfo)
 
         --// Top Bar \\-
         local TopBar = New("Frame", {
+			Name = "`	"
             BackgroundTransparency = 1,
             Size = UDim2.new(1, 0, 0, 48),
             Parent = MainFrame,
@@ -5308,11 +5310,13 @@ function Library:CreateWindow(WindowInfo)
 
         --// Title
         local TitleHolder = New("Frame", {
+			Name = "	"
             BackgroundTransparency = 1,
             Size = UDim2.fromScale(0.3, 1),
             Parent = TopBar,
         })
         New("UIListLayout", {
+			Name = " 	"
             FillDirection = Enum.FillDirection.Horizontal,
             HorizontalAlignment = Enum.HorizontalAlignment.Center,
             VerticalAlignment = Enum.VerticalAlignment.Center,
