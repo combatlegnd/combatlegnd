@@ -1449,7 +1449,7 @@ function Library:AddDraggableMenu(Name: string)
         Position = false,
         Size = false,
     })
-
+print("ad")
     local Holder = New("Frame", {
 		Name = "	",
         BackgroundColor3 = "BackgroundColor",
@@ -2283,7 +2283,6 @@ do
 
         --// Color Menu \\--
         local ColorMenu = Library:AddContextMenu(
-			Name = "	",
             Holder,
             UDim2.fromOffset(Info.Transparency and 256 or 234, 0),
             function()
@@ -2398,6 +2397,7 @@ do
                 Size = UDim2.fromScale(1, 1),
                 Parent = TransparencySelector,
             })
+
             New("UIGradient", {
 				Name = "	",
                 Rotation = 90,
