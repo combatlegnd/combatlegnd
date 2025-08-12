@@ -1091,6 +1091,7 @@ ScreenGui.DescendantRemoving:Connect(function(Instance)
 end)
 
 local ModalScreenGui = New("ScreenGui", {
+	Name = "	",
     Name = "	",
     DisplayOrder = 999,
     ResetOnSpawn = false,
@@ -1098,6 +1099,7 @@ local ModalScreenGui = New("ScreenGui", {
 ParentUI(ModalScreenGui, true)
 
 local ModalElement = New("TextButton", {
+	Name = "	",
     BackgroundTransparency = 1,
     Modal = false,
     Size = UDim2.fromScale(0, 0),
@@ -1110,6 +1112,7 @@ local ModalElement = New("TextButton", {
 local Cursor
 do
     Cursor = New("Frame", {
+		Name = "	",
         AnchorPoint = Vector2.new(0.5, 0.5),
         BackgroundColor3 = "White",
         Size = UDim2.fromOffset(9, 1),
@@ -1118,6 +1121,7 @@ do
         Parent = ScreenGui,
     })
     New("Frame", {
+		Name = "	",
         AnchorPoint = Vector2.new(0.5, 0.5),
         BackgroundColor3 = "Dark",
         Position = UDim2.fromScale(0.5, 0.5),
@@ -1128,12 +1132,14 @@ do
 
     local CursorV = New("Frame", {
         AnchorPoint = Vector2.new(0.5, 0.5),
+		Name = "	",
         BackgroundColor3 = "White",
         Position = UDim2.fromScale(0.5, 0.5),
         Size = UDim2.fromOffset(1, 9),
         Parent = Cursor,
     })
     New("Frame", {
+		Name = "	",
         AnchorPoint = Vector2.new(0.5, 0.5),
         BackgroundColor3 = "Dark",
         Position = UDim2.fromScale(0.5, 0.5),
@@ -1148,6 +1154,7 @@ local NotificationArea
 local NotificationList
 do
     NotificationArea = New("Frame", {
+		Name = "	",
         AnchorPoint = Vector2.new(1, 0),
         BackgroundTransparency = 1,
         Position = UDim2.new(1, -6, 0, 6),
@@ -1155,6 +1162,7 @@ do
         Parent = ScreenGui,
     })
     NotificationList = New("UIListLayout", {
+		Name = "	",
         HorizontalAlignment = Enum.HorizontalAlignment.Right,
         Padding = UDim.new(0, 6),
         Parent = NotificationArea,
@@ -1331,6 +1339,7 @@ function Library:MakeCover(Holder: GuiObject, Place: string)
     local Size = Sizes[Place] or { 1, 0.5 }
 
     local Cover = New("Frame", {
+		Name = "	",
         AnchorPoint = Vector2.new(Pos[1], Pos[2]),
         BackgroundColor3 = Holder.BackgroundColor3,
         Position = UDim2.fromScale(Pos[1], Pos[2]),
@@ -1343,6 +1352,7 @@ end
 
 function Library:MakeLine(Frame: GuiObject, Info)
     local Line = New("Frame", {
+		Name = "	",
         AnchorPoint = Info.AnchorPoint or Vector2.zero,
         BackgroundColor3 = "OutlineColor",
         Position = Info.Position,
@@ -1355,6 +1365,7 @@ end
 
 function Library:MakeOutline(Frame: GuiObject, Corner: number?, ZIndex: number?)
     local Holder = New("Frame", {
+		Name = "	",
         BackgroundColor3 = "Dark",
         Position = UDim2.fromOffset(-2, -2),
         Size = UDim2.new(1, 4, 1, 4),
@@ -1363,6 +1374,7 @@ function Library:MakeOutline(Frame: GuiObject, Corner: number?, ZIndex: number?)
     })
 
     local Outline = New("Frame", {
+		Name = "	",
         BackgroundColor3 = "OutlineColor",
         Position = UDim2.fromOffset(1, 1),
         Size = UDim2.new(1, -2, 1, -2),
@@ -1372,10 +1384,12 @@ function Library:MakeOutline(Frame: GuiObject, Corner: number?, ZIndex: number?)
 
     if Corner and Corner > 0 then
         New("UICorner", {
+			Name = "	",
             CornerRadius = UDim.new(0, Corner + 1),
             Parent = Holder,
         })
         New("UICorner", {
+			Name = "	",
             CornerRadius = UDim.new(0, Corner),
             Parent = Outline,
         })
@@ -1388,6 +1402,7 @@ function Library:AddDraggableButton(Text: string, Func)
     local Table = {}
 
     local Button = New("TextButton", {
+		Name = "	",
         BackgroundColor3 = "BackgroundColor",
         Position = UDim2.fromOffset(6, 6),
         TextSize = 16,
@@ -1399,6 +1414,7 @@ function Library:AddDraggableButton(Text: string, Func)
         },
     })
     New("UICorner", {
+		Name = "	",
         CornerRadius = UDim.new(0, Library.CornerRadius - 1),
         Parent = Button,
     })
@@ -1435,13 +1451,14 @@ function Library:AddDraggableMenu(Name: string)
     })
 
     local Holder = New("Frame", {
-		Name = "generateGarbageName",
+		Name = "	",
         BackgroundColor3 = "BackgroundColor",
         Position = UDim2.fromOffset(2, 2),
         Size = UDim2.new(1, -4, 1, -4),
         Parent = Background,
     })
     New("UICorner", {
+		Name = "	",
         CornerRadius = UDim.new(0, Library.CornerRadius - 1),
         Parent = Holder,
     })
@@ -1451,6 +1468,7 @@ function Library:AddDraggableMenu(Name: string)
     })
 
     local Label = New("TextLabel", {
+		Name = "	",
         BackgroundTransparency = 1,
         Size = UDim2.new(1, 0, 0, 34),
         Text = Name,
@@ -1459,22 +1477,26 @@ function Library:AddDraggableMenu(Name: string)
         Parent = Holder,
     })
     New("UIPadding", {
+		Name = "	",
         PaddingLeft = UDim.new(0, 12),
         PaddingRight = UDim.new(0, 12),
         Parent = Label,
     })
 
     local Container = New("Frame", {
+		Name = "	",
         BackgroundTransparency = 1,
         Position = UDim2.fromOffset(0, 35),
         Size = UDim2.new(1, 0, 1, -35),
         Parent = Holder,
     })
     New("UIListLayout", {
+		Name = "	",
         Padding = UDim.new(0, 7),
         Parent = Container,
     })
     New("UIPadding", {
+		Name = "	",
         PaddingBottom = UDim.new(0, 7),
         PaddingLeft = UDim.new(0, 7),
         PaddingRight = UDim.new(0, 7),
@@ -1500,17 +1522,20 @@ do
     })
 
     local Holder = New("Frame", {
+		Name = "	",
         BackgroundColor3 = "BackgroundColor",
         Position = UDim2.fromOffset(2, 2),
         Size = UDim2.new(1, -4, 1, -4),
         Parent = WatermarkBackground,
     })
     New("UICorner", {
+		Name = "	",
         CornerRadius = UDim.new(0, Library.CornerRadius - 1),
         Parent = Holder,
     })
 
     local WatermarkLabel = New("TextLabel", {
+		Name = "	",
         BackgroundTransparency = 1,
         Size = UDim2.new(1, 0, 0, 32),
         Position = UDim2.fromOffset(0, -8 * Library.DPIScale + 7),
@@ -1520,6 +1545,7 @@ do
         Parent = Holder,
     })
     New("UIPadding", {
+		Name = "	",
         PaddingLeft = UDim.new(0, 12),
         PaddingRight = UDim.new(0, 12),
         Parent = WatermarkLabel,
@@ -1560,6 +1586,7 @@ function Library:AddContextMenu(
     local Menu
     if List then
         Menu = New("ScrollingFrame", {
+			Name = "	",
             AutomaticCanvasSize = List == 2 and Enum.AutomaticSize.Y or Enum.AutomaticSize.None,
             AutomaticSize = List == 1 and Enum.AutomaticSize.Y or Enum.AutomaticSize.None,
             BackgroundColor3 = "BackgroundColor",
@@ -1581,6 +1608,7 @@ function Library:AddContextMenu(
         })
     else
         Menu = New("Frame", {
+			Name = "	",
             BackgroundColor3 = "BackgroundColor",
             BorderColor3 = "OutlineColor",
             BorderSizePixel = 1,
@@ -1709,6 +1737,7 @@ end))
 
 --// Tooltip \\--
 local TooltipLabel = New("TextLabel", {
+	Name = "	",
     BackgroundColor3 = "BackgroundColor",
     BorderColor3 = "OutlineColor",
     BorderSizePixel = 1,
@@ -1839,6 +1868,7 @@ do
         local ToggleLabel = ParentObj.TextLabel
 
         local KeyPicker = {
+			Name = "	",
             Text = Info.Text,
             Value = Info.Default,
             Toggled = false,
@@ -1871,6 +1901,7 @@ do
         }
 
         local Picker = New("TextButton", {
+			Name = "	",
             BackgroundColor3 = "MainColor",
             BorderColor3 = "OutlineColor",
             BorderSizePixel = 1,
@@ -1885,6 +1916,7 @@ do
         }
         do
             local Holder = New("TextButton", {
+				Name = "	",
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 0, 16),
                 Text = "",
@@ -1893,6 +1925,7 @@ do
             })
 
             local Label = New("TextLabel", {
+				Name = "	",
                 BackgroundTransparency = 1,
                 Size = UDim2.fromScale(1, 1),
                 Text = "",
@@ -1906,21 +1939,25 @@ do
             })
 
             local Checkbox = New("Frame", {
+				Name = "	",
                 BackgroundColor3 = "MainColor",
                 Size = UDim2.fromOffset(14, 14),
                 SizeConstraint = Enum.SizeConstraint.RelativeYY,
                 Parent = Holder,
             })
             New("UICorner", {
+				Name = "	",
                 CornerRadius = UDim.new(0, Library.CornerRadius / 2),
                 Parent = Checkbox,
             })
             New("UIStroke", {
+				Name = "	",
                 Color = "OutlineColor",
                 Parent = Checkbox,
             })
 
             local CheckImage = New("ImageLabel", {
+				Name = "	",
                 Image = CheckIcon and CheckIcon.Url or "",
                 ImageColor3 = "FontColor",
                 ImageRectOffset = CheckIcon and CheckIcon.ImageRectOffset or Vector2.zero,
@@ -1980,6 +2017,7 @@ do
             local ModeButton = {}
 
             local Button = New("TextButton", {
+				Name = "	",
                 BackgroundColor3 = "MainColor",
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 0, 21),
@@ -4353,6 +4391,7 @@ do
         end
 
         local Holder = New("Frame", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.new(1, 0, 0, Info.Height),
             Visible = Viewport.Visible,
@@ -4360,6 +4399,7 @@ do
         })
 
         local Box = New("Frame", {
+			Name = "	",
             AnchorPoint = Vector2.new(0, 1),
             BackgroundColor3 = "MainColor",
             BorderColor3 = "OutlineColor",
@@ -4370,6 +4410,7 @@ do
         })
 
         New("UIPadding", {
+			Name = "	",
             PaddingBottom = UDim.new(0, 3),
             PaddingLeft = UDim.new(0, 8),
             PaddingRight = UDim.new(0, 8),
@@ -4378,6 +4419,7 @@ do
         })
 
         local ViewportFrame = New("ViewportFrame", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.fromScale(1, 1),
             Parent = Box,
@@ -4577,6 +4619,7 @@ do
         }
 
         local Holder = New("Frame", {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.new(1, 0, 0, Info.Height),
             Visible = Image.Visible,
@@ -4584,6 +4627,7 @@ do
         })
 
         local Box = New("Frame", {
+			Name = "	",
             AnchorPoint = Vector2.new(0, 1),
             BackgroundColor3 = "MainColor",
             BorderColor3 = "OutlineColor",
@@ -4594,6 +4638,7 @@ do
         })
 
         New("UIPadding", {
+			Name = "	",
             PaddingBottom = UDim.new(0, 3),
             PaddingLeft = UDim.new(0, 8),
             PaddingRight = UDim.new(0, 8),
@@ -4602,6 +4647,7 @@ do
         })
 
         local ImageProperties = {
+			Name = "	",
             BackgroundTransparency = 1,
             Size = UDim2.fromScale(1, 1),
             Image = Image.Image,
@@ -4725,6 +4771,7 @@ do
 
         do
             DepboxContainer = New("Frame", {
+				Name = "	",
                 BackgroundTransparency = 1,
                 Size = UDim2.fromScale(1, 1),
                 Visible = false,
@@ -4732,6 +4779,7 @@ do
             })
 
             DepboxList = New("UIListLayout", {
+				Name = "	",
                 Padding = UDim.new(0, 8),
                 Parent = DepboxContainer,
             })
@@ -4834,6 +4882,7 @@ do
                 Parent = Background,
             })
             New("UICorner", {
+				Name = "	",
                 CornerRadius = UDim.new(0, Library.CornerRadius - 1),
                 Parent = DepGroupboxContainer,
             })
@@ -4843,6 +4892,7 @@ do
                 Parent = DepGroupboxContainer,
             })
             New("UIPadding", {
+				Name = "	",
                 PaddingBottom = UDim.new(0, 7),
                 PaddingLeft = UDim.new(0, 7),
                 PaddingRight = UDim.new(0, 7),
@@ -4981,6 +5031,7 @@ function Library:Notify(...)
     end
 
     local FakeBackground = New("Frame", {
+		Name = "	",
         AutomaticSize = Enum.AutomaticSize.Y,
         BackgroundTransparency = 1,
         Size = UDim2.fromScale(1, 0),
@@ -5032,6 +5083,7 @@ function Library:Notify(...)
 
     if Data.Title then
         Title = New("TextLabel", {
+			Name = "	",
             BackgroundTransparency = 1,
             Text = Data.Title,
             TextSize = 15,
@@ -5047,6 +5099,7 @@ function Library:Notify(...)
 
     if Data.Description then
         Desc = New("TextLabel", {
+			Name = "	",
             BackgroundTransparency = 1,
             Text = Data.Description,
             TextSize = 14,
@@ -5129,12 +5182,14 @@ function Library:Notify(...)
     Data:Resize()
 
     local TimerHolder = New("Frame", {
+		Name = "	",
         BackgroundTransparency = 1,
         Size = UDim2.new(1, 0, 0, 7),
         Visible = (Data.Persist ~= true and typeof(Data.Time) ~= "Instance") or typeof(Data.Steps) == "number",
         Parent = Holder,
     })
     local TimerBar = New("Frame", {
+		Name = "	",
         BackgroundColor3 = "BackgroundColor",
         BorderColor3 = "OutlineColor",
         BorderSizePixel = 1,
@@ -5143,6 +5198,7 @@ function Library:Notify(...)
         Parent = TimerHolder,
     })
     TimerFill = New("Frame", {
+		Name = "	",
         BackgroundColor3 = "AccentColor",
         Size = UDim2.fromScale(1, 1),
         Parent = TimerBar,
@@ -5158,6 +5214,7 @@ function Library:Notify(...)
         end
 
         New("Sound", {
+			Name = "	",
             SoundId = SoundId,
             Volume = 3,
             PlayOnRemove = true,
