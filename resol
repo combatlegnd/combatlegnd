@@ -236,9 +236,8 @@
 		}
 	}
 
-	writefile("dddd.ttf", http_service:JSONEncode(tahoma))
 
-	library.font = Font.new(getcustomasset("dddd.ttf"), Enum.FontWeight.Regular)
+	library.font = nil
 
 	local config_holder 
 -- 
